@@ -59,8 +59,7 @@ def perform_clustering():
         "frequency": {"type": "integer"}
     }
 
-    data_source = revoscale.RxSqlServerData(sql_query=input_query, column_info=column_info,
-                                              connection_string=conn_str)
+    data_source = revoscale.RxSqlServerData(sql_query=input_query, column_info=column_info, connection_string=conn_str)
     
     # import data source and convert to pandas dataframe.
     customer_data = pd.DataFrame(revoscale.rx_import(data_source))
