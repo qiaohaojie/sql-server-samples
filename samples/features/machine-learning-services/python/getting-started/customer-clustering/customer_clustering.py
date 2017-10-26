@@ -16,7 +16,7 @@ def perform_clustering():
     ################################################################################################
 
     # Connection string to connect to SQL Server named instance.
-    conn_str = 'Driver=SQL Server;Server=localhost;Database=tpcxbb_1gb;Trusted_Connection=True;'
+    conn_str = 'Driver=SQL Server;Server=.;Database=tpcxbb_1gb;Trusted_Connection=True;'
 
     input_query = '''SELECT
     ss_customer_sk AS customer,
@@ -63,7 +63,7 @@ def perform_clustering():
                                               connection_string=conn_str)
     
     # import data source and convert to pandas dataframe.
-    customer_data = pd.DataFrame(revoscalepy.rx_import(data_source))
+    customer_data = pd.DataFrame(revoscale.rx_import(data_source))
     print("Data frame:", customer_data.head(n=20))
 
     ################################################################################################
