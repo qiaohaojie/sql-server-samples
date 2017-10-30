@@ -2,9 +2,19 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+
+
+# If you are running SQL Server 2017 RC1 and above:
 import revoscalepy as revoscale
-from scipy.spatial import distance as sci_distance
-from sklearn import cluster as sk_cluster
+# from revoscalepy import RxComputeContext, RxInSqlServer, RxSqlServerData
+# from revoscalepy import rx_import
+
+# Load sklearn
+# from sklearn import cluster as sk_cluster
+# from sklearn.linear_model import LinearRegression
+# from sklearn.metrics import mean_squared_error
+
+
 
 
 

@@ -3,15 +3,21 @@ import numpy as np
 from sklearn.pipeline import Pipeline
 from datasource import DataSource
 from pipeline import *
-from revoscalepy.etl.RxImport import rx_import_datasource
+# from revoscalepy.etl.RxImport import rx_import_datasource
 from sklearn.metrics import classification_report
+import revoscalepy
+
+
+
+
+
 
 
 
 def run():
     
     # modify connection string to point to MLS/SQL Server instance where you restored the database 
-    connectionstring = 'Driver=SQL Server;Server=MLMACHINE\\SQLSERVER17;Database=velibdb;Trusted_Connection=True;'
+    connectionstring = 'Driver=SQL Server;Server=.;Database=velibdb;Trusted_Connection=True;'
 
     ds = DataSource(connectionstring)
     df = ds.loaddata()

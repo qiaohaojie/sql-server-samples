@@ -40,7 +40,11 @@ def get_rental_predictions():
         auto_cleanup=False
     )
 
-    RxInSqlServer(connection_string=conn_str, num_tasks=1, auto_cleanup=False)
+    RxInSqlServer(
+        connection_string=conn_str,
+        num_tasks=1,
+        auto_cleanup=False
+    )
 
     # import data source and convert to pandas dataframe
     df = pd.DataFrame(rx_import(input_data=data_source))

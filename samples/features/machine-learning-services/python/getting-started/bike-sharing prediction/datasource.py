@@ -1,8 +1,9 @@
-from revoscalepy.computecontext.RxComputeContext import RxComputeContext
-from revoscalepy.computecontext.RxInSqlServer import RxInSqlServer
-from revoscalepy.computecontext.RxInSqlServer import RxSqlServerData
-from revoscalepy.etl.RxImport import rx_import_datasource
+# from revoscalepy.computecontext.RxComputeContext import RxComputeContext
+# from revoscalepy.computecontext.RxInSqlServer import RxInSqlServer
+# from revoscalepy.computecontext.RxInSqlServer import RxSqlServerData
+# from revoscalepy.etl.RxImport import rx_import_datasource
 
+import revoscalepy
 
 class DataSource():
 
@@ -21,10 +22,17 @@ class DataSource():
     
 
     def loaddata(self):
-        dataSource = RxSqlServerData(sqlQuery = "select * from dbo.trainingdata", verbose=True, reportProgress =True,
-                                     connectionString = self.__connectionstring)
+        dataSource = revoscalepy.RxSqlServerData(
+            sqlQuery = "select * from dbo.trainingdata",
+            verbose=True,
+            reportProgress =True,
+            connectionString = self.__connectionstring
+        )
 
-        self.__computeContext = RxInSqlServer(connectionString = self.__connectionstring, autoCleanup = True)  
+        self.__computeContext = RxInSqlServer(
+            connectionString = self.__connectionstring,
+            autoCleanup = True
+        )
         data = rx_import_datasource(dataSource)
 
         return data

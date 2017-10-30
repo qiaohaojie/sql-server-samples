@@ -11,8 +11,9 @@ import pandas as pd
 import time
 from sklearn.base import BaseEstimator, TransformerMixin,  ClassifierMixin
 from sklearn.preprocessing import StandardScaler
-from revoscalepy.functions.RxLogit import rx_logit_ex
-from revoscalepy.functions.RxPredict import rx_predict_ex
+# from revoscalepy.functions.RxLogit import rx_logit_ex
+# from revoscalepy.functions.RxPredict import rx_predict_ex
+import revoscalepy
 
 
 #=========================
